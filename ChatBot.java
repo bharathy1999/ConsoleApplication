@@ -8,13 +8,16 @@ public class ChatBot{
     Stack<ChatClass> bs=new Stack<>();
     public static void main(String args[]){
         ChatBot chatbot=new ChatBot();
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter Your Name:");
+        String name=sc.next();
+        System.out.println("Hii "+name+" I am Bot for Yours");
         chatbot.bs.push(new ChatClass(0,0));
         chatbot.show(0,0);
         int i=-1;
         while(i!=0){
-            Scanner input=new Scanner(System.in);
             System.out.println();
-            i=input.nextInt();
+            i=sc.nextInt();
             if(i==10){
                 chatbot.bs.pop();
                 if(chatbot.bs.isEmpty()){
