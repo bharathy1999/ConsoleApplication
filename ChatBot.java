@@ -10,6 +10,7 @@ public class ChatBot{
         ChatBot chatbot=new ChatBot();
         Scanner sc=new Scanner(System.in);
         System.out.print("Enter Your Name:");
+        try{
         String name=sc.next();
         System.out.println("Hii "+name+" I am Bot for Yours");
         chatbot.bs.push(new ChatClass(0,0));
@@ -25,7 +26,10 @@ public class ChatBot{
                 }
             } else{
                 chatbot.bs.push(new ChatClass(chatbot.bs.peek().getm() + 1,i));
-            }
+            }}
+            catch(InputMismatchException e){
+            System.out.print("Enter a correct input");
+                }
             ChatClass top=chatbot.bs.peek();
             chatbot.show(top.getm(),top.getn());
         }
